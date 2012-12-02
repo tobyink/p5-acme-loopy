@@ -1,3 +1,5 @@
+package Acme::Loopy;
+
 use 5.014;
 use strict;
 use warnings;
