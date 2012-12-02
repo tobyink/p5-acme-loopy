@@ -1,0 +1,10 @@
+# This file provides instructions for packaging.
+
+`Acme-Loopy`
+	perl_version_from m`Acme::Loopy`;
+	version_from      m`Acme::Loopy`;
+	readme_from       m`Acme::Loopy`;
+	test_requires     p`Test::More 0.61`;
+	requires          p`Keyword::Simple`;
+	.
+
