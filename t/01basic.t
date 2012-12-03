@@ -1,6 +1,6 @@
 use v5.14;
 use strict;
-use Test::More tests => 2;
+use Test::More tests => 3;
 use Acme::Loopy;
 
 my $sum = 0;
@@ -36,3 +36,4 @@ loop {
 	last;
 };
 
+is ${^LOOP}, undef;
