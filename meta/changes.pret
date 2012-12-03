@@ -10,3 +10,10 @@
 		item "${^LOOP} is now zero-based. It was previously one-based but that was undocumented. Having it false on the first journey around the loop seems to enable some nice idioms."^^Change;
 	].
 
+`Acme-Loopy 0.003 cpan:TOBYINK`
+	issued  2012-12-03;
+	changeset [
+		item "Perl 5.12 compat"^^Change;
+		item "Test that ${^LOOP} is undefined after the loop has finished."^^Change;
+	].
+
