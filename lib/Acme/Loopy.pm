@@ -1,12 +1,11 @@
-package Acme::Loopy;
-
-use 5.014;
+use 5.012;
 use strict;
 use warnings;
-use Keyword::Simple;
+use Keyword::Simple ();
 
-package Acme::Loopy
 {
+	package Acme::Loopy;
+	
 	our $AUTHORITY = 'cpan:TOBYINK';
 	our $VERSION   = '0.002';
 		
@@ -28,8 +27,9 @@ package Acme::Loopy
 	}
 }
 
-package Acme::Loopy::Guard
 {
+	package Acme::Loopy::Guard;
+
 	our $AUTHORITY = 'cpan:TOBYINK';
 	our $VERSION   = '0.002';
 	
