@@ -4,3 +4,9 @@
 	issued  2012-12-02;
 	label   "Initial release".
 
+`Acme-Loopy 0.002 cpan:TOBYINK`
+	issued  2012-12-03;
+	changeset [
+		item "${^LOOP} is now zero-based. It was previously one-based but that was undocumented. Having it false on the first journey around the loop seems to enable some nice idioms."^^Change;
+	].
+

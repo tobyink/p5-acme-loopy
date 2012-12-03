@@ -8,7 +8,7 @@ use Keyword::Simple;
 package Acme::Loopy
 {
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.001';
+	our $VERSION   = '0.002';
 		
 	sub import
 	{
@@ -17,7 +17,7 @@ package Acme::Loopy
 			my $rand = 99_999 + int rand 900_000;
 			substr($$ref, 0, 0) =
 				q{ local ${^_LOOP_OLD}     = ${^LOOP}; } .
-				q{ local ${^_LOOP_CURRENT} = 0; } .
+				q{ local ${^_LOOP_CURRENT} = -1; } .
 				q{ while ( ${^LOOP} = ++${^_LOOP_CURRENT}, my $__guard_}.$rand.q{ = Acme::Loopy::Guard->new(${^_LOOP_OLD}, \${^LOOP}) )};
 		};
 	}
@@ -31,7 +31,7 @@ package Acme::Loopy
 package Acme::Loopy::Guard
 {
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.001';
+	our $VERSION   = '0.002';
 	
 	sub new
 	{
@@ -58,9 +58,8 @@ Acme::Loopy - loop keyword
 	loop {
 		my @row = get_data() or last;
 		
-		if (${^LOOP} == 1) {    # first iteration
-			print table_headers(\@row);
-		}
+		# First iteration only
+		print table_headers(\@row) unless ${^LOOP};
 		
 		# All iterations
 		print table_row(\@row);
@@ -74,7 +73,8 @@ loops infinitely until an explicit C<last>. This is quite similar to
 ikegami's L<Syntax::Feature::Loop>.
 
 Within the loop, the variable C<< ${^LOOP} >> can be used to obtain the
-current iteration count.
+current iteration count. This is a zero-based count, so is zero (false)
+on the first journey around the loop.
 
 L<Keyword::Simple> made defining the C<loop> keyword itself so easy that
 C<< ${^LOOP} >> became the tricky part. (Or rather making it work with
