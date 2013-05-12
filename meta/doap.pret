@@ -8,7 +8,7 @@
 	:homepage             <https://metacpan.org/release/Acme-Loopy>;
 	:download-page        <https://metacpan.org/release/Acme-Loopy>;
 	:bug-database         <http://rt.cpan.org/Dist/Display.html?Queue=Acme-Loopy>;
-	:repository           [ a :HgRepository; :browse <https://bitbucket.org/tobyink/p5-acme-loopy> ];
+	:repository           [ a :GitRepository; :browse <https://github.com/tobyink/p5-acme-loopy> ];
 	:created              2012-12-02;
 	:license              <http://dev.perl.org/licenses/>;
 	:maintainer           cpan:TOBYINK;
