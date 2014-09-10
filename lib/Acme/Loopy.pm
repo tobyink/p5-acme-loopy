@@ -7,7 +7,7 @@ use Keyword::Simple ();
 	package Acme::Loopy;
 	
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.003';
+	our $VERSION   = '0.004';
 		
 	sub import
 	{
@@ -31,7 +31,7 @@ use Keyword::Simple ();
 	package Acme::Loopy::Guard;
 
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.003';
+	our $VERSION   = '0.004';
 	
 	sub new
 	{

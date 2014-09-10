@@ -17,3 +17,10 @@
 		item "Test that ${^LOOP} is undefined after the loop has finished."^^Change;
 	].
 
+
+`Acme-Loopy 0.004 cpan:TOBYINK`
+	issued    2014-09-10;
+	changeset [
+		item "Switch to Dist::Inkt."^^Packaging;
+	].
+
